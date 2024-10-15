@@ -23,7 +23,16 @@ def ordenar_matriz(matriz: list[list], index: int, sentido: str='DES') -> list[l
     print(nueva_matriz)
     return nueva_matriz
 
-def calcular_ganancia_garage(garage: list) -> int:
-    return garage[2] * garage[3]
+def calcular_ganancia_garage(valor_a, valor_b) -> int:
+    return valor_a * valor_b
 
+def calcular_garages_6(matriz: list[list]) -> int:
+    total = 0
 
+    for i in matriz[2]:
+        if i >= 6 and total:
+            total += 1
+        elif i >= 6 and not total:
+            total = 1
+
+    return total

@@ -4,13 +4,13 @@ def obtener_recaudacion(matriz: list[list]) -> None:
     total = None
 
     for i in range(len(matriz[0])):
-        garage = []
-        for j in range(len(matriz)):
-            garage.append(matriz[j][i])
+        matriz[4][i] = calcular_ganancia_garage(matriz[2][i], matriz[3][i])
+
         if not total:
-            total = calcular_ganancia_garage(garage)
+            total = calcular_ganancia_garage(matriz[2][i], matriz[3][i])
         else:
-            total += calcular_ganancia_garage(garage)
+            total += calcular_ganancia_garage(matriz[2][i], matriz[3][i])
+        
 
     reporte = f'''
     La ganancia total obtenida
